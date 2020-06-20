@@ -15,3 +15,25 @@ This TDI onboarding project shows a [web app](https://zhuyun-maggie-xiao-stockti
   and [examples](https://github.com/bokeh/bokeh/tree/master/examples/embed).
 - Make the plot visible on your website through embedded HTML or other methods - this is where Flask comes in to manage the interactivity and display the desired content.
 - Some good references for Flask: [This article](https://realpython.com/blog/python/python-web-applications-with-flask-part-i/), especially the links in "Starting off", and [this tutorial](https://github.com/bev-a-tron/MyFlaskTutorial).
+```
+.
+├── Procfile
+├── README.md
+├── __pycache__
+│   ├── app.cpython-37.pyc
+│   ├── forms.cpython-37.pyc
+│   ├── key.cpython-37.pyc
+│   └── stocks_data.cpython-37.pyc
+├── app.py
+├── forms.py
+├── key.py
+├── requirements.txt
+├── runtime.txt
+├── stocks_data.py
+├── templates
+│   ├── graph.html
+│   ├── index.html
+│   └── structure.html
+└── test.ipynb
+
+ ```
