@@ -71,15 +71,6 @@ def index():
           script, div = stocks_data.plot2(df, ticker, column)      
       return render_template('graph.html', script = script, div = div, ticker = ticker)
       
-        
-
-'''
-@app.route('/test')
-def trial():
-  names = {'name' : 'Maggie'}
-  items = [{'text' : 'First'}, {'text' : 'Second'}, {'text' : 'Third'}, {'text': 'Fourth'}]
-  return render_template('layout.html', names = names, language = 'Python', lang = True, framework = 'Flask', items = items)
-'''
 
 if __name__ == '__main__':
   #app.run(debug = True)
