@@ -1,6 +1,6 @@
 # Stock Ticker Application 
 
-This TDI onboarding project shows a [web app](https://zhuyun-maggie-xiao-stockticker.herokuapp.com/index) that displays user requested stock information. It ties together some important concepts and technologies from the 12-day course, including Git, Flask, JSON, Pandas, Requests, Heroku, and Bokeh for visualization.
+This TDI onboarding project shows a [web app](https://zhuyun-maggie-xiao-stockticker.herokuapp.com/index) that displays user requested stock time series. It ties together some important concepts and technologies from the 12-day course, including Git, Flask, JSON, Pandas, Requests, Heroku, and Bokeh for visualization.
 
 ## Flask on Heroku Project steps
 
