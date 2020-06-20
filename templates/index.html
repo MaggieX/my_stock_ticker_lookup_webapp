@@ -2,31 +2,161 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Skeleton application demoing Heroku and Flask integration.">
-    <meta name="author" content="@gotoariel">
-    <!-- <link rel="icon" href="favicon.ico"> -->
+    <meta name="author" content='Maggie Xiao' />
 
-    <title>Wilkommen, bienvenue, and welcome to Heroku!</title>
+    <title>Historical Stock Price Lookup</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom CSS for navbar-->
+    <style>
+      body {
+        padding-top: 0px;
+        background-image: url('https://cdn.hipwallpaper.com/m/7/34/ERP16c.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: absolute;
+        min-height: 800px;
+      }
+      footer{
+        flex: 0 0 200px;
+        background: white;
+        opacity: 0.7;
+      }
+    </style>
   </head>
+    
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-left">
-          <h2>Hello, World!</h2>
-          <ul>
-            <li><a href="/about">About</a></li>
-            <li><a target="_blank" href="https://www.heroku.com/">Heroku</a></li>
-            <li><a target="_blank" href="http://flask.pocoo.org/">Flask</a></li>
-            <li><a target="_blank" href="http://jinja.pocoo.org/docs/2.9/">Jinja2</a></li>
-            <li><a target="_blank" href="http://getbootstrap.com/">Bootstrap</a></li>
-          </ul>
+    <!-- navigation -->
+    <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                </button>
+            <span class="navbar-brand">Stock Ticker Lookup</span> 
+          </div>
+        <div class="collapse navbar-collapse" id="nav-1">
+          <ul class="nav navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.google.com/finance">Google Finance</a>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/maggiex">GitHub</a>
+            </li>
+            </ul>
         </div>
       </div>
-    </div>
+    </nav>
+
+    <!-- form -->
+    <div class="container">
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Stock Price Lookup</title>
+
+      </head>
+
+      <article>
+        <h2 style="color: white; font-size: 30px;">Introduction</h2>
+        <div style="margin-top:20px">
+          <div class="row align-items-center justify-content-center my-5">
+            <div class="col-lg-12 text-left">
+              <form id='input' method='post' action='index'>
+                <p style="color: white; font-size: 30px; text-align:center;">Enter a Stock Ticker:</p>
+                <p style="color: red; font-size: 35px; text-align: center;"> <input type='text' name='ticker' placeholder='SPY' required /></p>
+                <p style="color: rgb(203, 201, 206); font-size: 20px; text-align: center;">
+                Look up&nbsp;<a class="nav-link" href="https://finance.google.com/finance" target="_blank">ticker symbols</a>
+                </p>
+        
+       
+                <p style="color: grey; font-size: 20px; ">
+                  >>> Opening price <input type="checkbox" name='open' /><br>
+                  >>> High price <input type="checkbox" name='high' /><br>
+                  >>> Low price <input type="checkbox" name="low" /><br>
+                  >>> Closing price <input type="checkbox" name="close" /><br>
+                  >>> Adjusted closing price <input type="checkbox" name="adjusted_close" /><br>
+                  >>> Volume <input type="checkbox" name='volume' /><br>
+                  >>> Daily Total Stock Return <input type="checkbox" name="daily_return" /><br>
+                  <button type="reset" class="btn btn-warning" value="Reset Inputs">Clear Selections</button>
+                  <button type="submit" class="btn btn-success" value='Submit'>Show Plot</button><br>
+                </p>
+                <div style="margin-top:40px"></div>
+                <p style="color: rgb(233, 161, 161); font-size: 20px; ">
+                <label for="inputState">OR uncheck the boxes above, and select an item below: </label>
+                <select name="column" id="inputState" class="form-control" required>
+                  <option selected>Select one...</option>
+                  <option value="open">Opening price</option>
+                  <option value="close">Closing price</option>
+                  <option value="high">High</option>
+                  <option value="low">Low</option>
+                  <option value="volume">Volume</option>
+                  <option value="daily_return">Daily Total Stock Return</option>
+                </select>
+                </p>
+                <p><input type="submit" class="btn btn-success" value= 'Show Plot of your Stock of interest'></p>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:200px"></div>
+        <p style="color: white; font-size: 15px;"> Created on June 17, 2020</p>
+
+      </article>
+    </header>
+    <!--/header-->
+
+    <footer>
+      <div style="margin-top:10px"></div>
+      <div class="container">
+        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+          <h4>About Us</h4>
+          <p></p>
+          <div class="contact-info">
+            <ul>
+              <li><i class="fa fa-home fa"></i> Los Angeles, California</li>
+              <li><i class="fa fa-envelope fa"></i> zxiao2015@mg.thedataincubator.com</li>
+              <li><i class="fa fa-envelope fa"></i> <a href="https://maggiex.github.io">Webpage</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+          <div class="text-center">
+    
+          </div>
+        </div>
+    
+        <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+          <div class="">
+            <h4>Subscribe</h4>
+            <div class="btn-gamp">
+              <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Your Email">
+            </div>
+            <div class="btn-gamp">
+              <a type="submit" class="btn btn-default">Subscribe</a>
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+    </footer>
+    
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

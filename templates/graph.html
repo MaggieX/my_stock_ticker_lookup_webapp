@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content='Maggie Xiao' />
+
+    <title>Historical Stock Price Lookup</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom CSS for navbar-->
+    <style>
+        body {
+            padding-top: 100px;
+            background-image: url('https://cdn.hipwallpaper.com/m/7/34/ERP16c.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: absolute;
+            min-height: 800px;
+        }
+
+        footer {
+            flex: 0 0 200px;
+            background: white;
+            opacity: 0.7;
+        }
+
+        .centered{
+            display : block;
+            margin : 0 auto;
+            text-align: left;
+            width: 800px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-2.0.2.min.css" type="text/css" />
+
+
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-2.0.2.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+    {{ script | safe }}
+</head>
+
+<body>
+    <!-- navigation -->
+    <header>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand">Stock Ticker Lookup</span>
+                </div>
+                <div class="collapse navbar-collapse" id="nav-1">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home<span class="sr-only">(Return)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.google.com/search?q={{ ticker }}">Google Finance</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/maggiex">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- form -->
+        <div class="container">
+
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Stock Price Lookup</title>
+
+            </head>
+
+    </header>
+    <!--/header-->
+     
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        if (form.name === "column" && form.options[form.selectedIndex].text === "Choose...") {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    
+    </script>
+
+    <!--display Bokeh plot-->
+    <!--<div class="row align-items-center justify-content-center">-->
+    <div class="centered" style="background-color: bisque;">
+        <div>
+            {{ div | safe }}
+        </div>
+    </div>
+
+
+    <!--footer-->
+    <footer>
+        <div style="margin-top:10px"></div>
+        <div class="container">
+            <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <h4>About Us</h4>
+                <p></p>
+                <div class="contact-info">
+                    <ul>
+                        <li><i class="fa fa-home fa"></i> Los Angeles, California</li>
+                        <li><i class="fa fa-envelope fa"></i> zxiao2015@mg.thedataincubator.com</li>
+                        <li><i class="fa fa-envelope fa"></i> <a href="https://maggiex.github.io">Webpage</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <div class="text-center">
+
+                </div>
+            </div>
+
+            <div class="col-md-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+                <div class="">
+                    <h4>Subscribe</h4>
+                    <div class="btn-gamp">
+                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Your Email">
+                    </div>
+                    <div class="btn-gamp">
+                        <a type="submit" class="btn btn-default">Subscribe</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
